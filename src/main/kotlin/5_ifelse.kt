@@ -5,7 +5,7 @@
 
 fun main() {
 
-    var ans1: Doubleee
+    var ans1: Double
 
     // Problem 1
 
