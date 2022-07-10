@@ -28,15 +28,15 @@ fun arrays() {
 
 fun immutable() {
 
-    immutablelist()
-
+//    immutablelist()
+//    immutableMap()
 
 }
 
 fun mutable() {
 
-    mutableList()
-
+//    mutableList()
+//    mutableMap()
 }
 
 fun immutablelist() {
@@ -74,6 +74,39 @@ fun mutableList() {
 
     for (i in 0..list.size - 1)
         print("${list.get(i)} ")
+}
+
+private fun immutableMap() {
+
+    var myMap = mapOf<String, String>("p1" to "idk1", "p2" to "idk2")
+
+    for (i in myMap)
+        println(i.key + " " + i.value)
+
+    for (key in myMap.keys)
+        println(key + " " + myMap[key])
+
+}
+
+private fun mutableMap() {
+    var myMap = HashMap<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
+//    var myMap = mutableMapOf<Int, String>() // Mutable, READ and WRITE both, No Fixed Size
+//    var myMap = hashMapOf<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
+
+    myMap.put(4, "Yogi")
+    myMap.put(43, "Manmohan")
+    myMap[7] = "Vajpayee"
+    myMap[43] = "Modi"
+
+    for (i in myMap)
+        println("${i.key} ${i.value}")
+
+    for (key in myMap.keys)
+        println("Element at $key = ${myMap[key]}")
+
+    for (key in myMap.keys)
+        println("Element at $key = ${myMap.get(key)}")
+
 }
 
 // Collections
