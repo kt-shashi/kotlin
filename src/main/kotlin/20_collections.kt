@@ -2,7 +2,7 @@ fun main() {
 
 //    arrays()
 
-//    immutable()
+    immutable()
     mutable()
 
 }
@@ -30,6 +30,7 @@ fun immutable() {
 
 //    immutablelist()
 //    immutableMap()
+//    immutableSet()
 
 }
 
@@ -37,6 +38,8 @@ fun mutable() {
 
 //    mutableList()
 //    mutableMap()
+    mutableSet()
+
 }
 
 fun immutablelist() {
@@ -94,8 +97,10 @@ private fun mutableMap() {
 //    var myMap = hashMapOf<Int, String>()      // Mutable, READ and WRITE both, No Fixed Size
 
     myMap.put(4, "Yogi")
-    myMap.put(43, "Manmohan")
+    myMap[43] = "Manmohan"
     myMap[7] = "Vajpayee"
+
+    // Value is replaced if key already exists
     myMap[43] = "Modi"
 
     for (i in myMap)
@@ -107,6 +112,32 @@ private fun mutableMap() {
     for (key in myMap.keys)
         println("Element at $key = ${myMap.get(key)}")
 
+}
+
+private fun immutableSet() {
+    // "Set" contains unique elements
+
+    var mySet = setOf<Int>(1, 1, 6, 2, 1, 7, 53)
+
+    for (i in mySet)
+        print("$i ")
+    println()
+
+}
+
+private fun mutableSet() {
+    // "Set" contains unique elements
+    // "HashSet" also contains unique elements but sequence is not guaranteed in output
+
+    var mySet = mutableSetOf<Int>(2, 54, 3, 1, 0, 9, 9, 9, 8)  // Mutable Set, READ and WRITE both
+//    var mySet = hashSetOf<Int>( 2, 54, 3, 1, 0, 9, 9, 9, 8)     // Mutable Set, READ and WRITE both
+
+    mySet.remove(54)
+    mySet.add(100)
+
+    for (element in mySet) {
+        println(element)
+    }
 }
 
 // Collections
