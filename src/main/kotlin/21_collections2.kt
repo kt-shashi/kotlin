@@ -16,7 +16,9 @@
 
 fun main(args: Array<String>) {
 
-    filterAndMap()
+//    filterAndMap()
+
+    predicates()
 
 }
 
@@ -43,6 +45,27 @@ private fun filterAndMap() {
     for (name in names) {
         println(name)
     }
+
+}
+
+private fun predicates() {
+
+    val myNumbers = listOf(2, 3, 4, 6, 23, 90)
+
+
+    // All
+    val check1: Boolean = myNumbers.all({ it > 10 })       // Are all elements greater than 10?
+    println(check1) // false (2,3,4,6)
+
+    val check2: Boolean = myNumbers.any({ it > 10 })         // Is any number greater than 10?
+    println(check2) // true (23,90)
+
+    val totalCount: Int = myNumbers.count({ it > 10 })  // No of elements grater than 10
+    println(totalCount) // 2 (23,90)
+
+    val num = myNumbers.find({ it > 10 })           // Returns the first number that matches the predicate or null if not found
+    println(num) // 23
+
 }
 
 class Pperson(var age: Int, var name: String) {
